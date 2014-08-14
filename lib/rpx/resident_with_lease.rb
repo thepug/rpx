@@ -30,7 +30,7 @@ module Rpx
       end
 
       site_properties = {siteid: options.fetch(:siteid), pmcid: options.fetch(:pmcid)}
-      [resident_hashs].flatten.map{ |resident_hash| ResidentWithLease.new(resident_hash.merge(site_properties))  }
+      [resident_hashs].flatten.select{|res_hash| res_hash[:leaseslist].present?}.map{ |resident_hash| ResidentWithLease.new(resident_hash.merge(site_properties))  }
     end
 
 
