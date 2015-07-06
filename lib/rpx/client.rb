@@ -24,9 +24,6 @@ module Rpx
             xml.soapenv :Body do |xml|
               xml.tem action_name do |xml|
                 xml.tem :auth do |xml|
-                  p xml
-                  xml.tem :siteid, options.fetch(:siteid)
-                  xml.tem :pmcid, options.fetch(:pmcid)
                   xml.tem :username, Rpx.config.username
                   xml.tem :password, Rpx.config.password
                   xml.tem :licensekey, Rpx.config.licensekey
