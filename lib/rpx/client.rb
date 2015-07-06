@@ -18,12 +18,13 @@ module Rpx
 
     def api_call(action_name, options)
       raw_response = client.request action_name do
-        soap.xml do |xml|
-          xml.soapenv :Envelope, NAMESPACES do |xml|
-            xml.soapenv :Header
-            xml.soapenv :Body do |xml|
-              xml.tem action_name do |xml|
-                xml.tem :auth do |xml|
+        soap.xml do |xml0|
+          p xml0
+          xml0.soapenv :Envelope, NAMESPACES do |xml1|
+            xml1.soapenv :Header
+            xml1.soapenv :Body do |xml2|
+              xml2.tem action_name do |xml3|
+                xml3.tem :auth do |xml|
                   xml.tem :username, Rpx.config.username
                   xml.tem :password, Rpx.config.password
                   xml.tem :licensekey, Rpx.config.licensekey
