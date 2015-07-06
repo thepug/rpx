@@ -19,7 +19,6 @@ module Rpx
     def api_call(action_name, options)
       raw_response = client.request action_name do
         soap.xml do |xml0|
-          p xml0
           xml0.soapenv :Envelope, NAMESPACES do |xml1|
             xml1.soapenv :Header
             xml1.soapenv :Body do |xml2|
@@ -44,6 +43,7 @@ module Rpx
     def client
       @client ||= Savon::Client.new(log: @debug, pretty_print_xml: true) do
         wsdl.document = Rpx.config.api_url
+        p wsdl.document
         http.read_timeout = @read_timeout
       end
     end
