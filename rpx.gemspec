@@ -27,5 +27,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "pry-rescue"
 
   spec.add_dependency "savon", "~> 0.9.14"
-  spec.add_dependency "hashie", '~>2.1.1'
+  spec.add_dependency "hashie"
 end
