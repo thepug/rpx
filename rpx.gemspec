@@ -26,6 +26,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "pry-stack_explorer"
   spec.add_development_dependency "pry-rescue"
 
-  spec.add_dependency "savon", "~> 0.9.14"
+  spec.add_dependency "savon"
   spec.add_dependency "hashie"
 end
